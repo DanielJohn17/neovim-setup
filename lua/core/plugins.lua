@@ -23,6 +23,13 @@ return require('packer').startup(function(use)
     requires = {{ 'nvim-lua/plenary.nvim' }}
   }
 
+  -- lsp config
+  use {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
+  }
+
   -- color schemes
   use 'ellisonleao/gruvbox.nvim'
   use "joshdick/onedark.vim"
