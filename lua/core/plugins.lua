@@ -30,11 +30,18 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
   }
 
+  -- completion
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'rafamadriz/friendly-snippets'
+
   -- color schemes
   use 'ellisonleao/gruvbox.nvim'
   use "joshdick/onedark.vim"
   use 'Mofiqul/dracula.nvim'
-  use "catppuccino/nvim"
+  -- use "catppuccino/nvim"
   use "bluz71/vim-nightfly-colors"
   use "folke/tokyonight.nvim"
 
