@@ -26,6 +26,7 @@ local plugins = {
     tag = '0.1.8',
     dependancies = {{ 'nvim-lua/plenary.nvim' }}
   },
+  'nvim-telescope/telescope-ui-select.nvim',
 
   -- lsp config
   {
