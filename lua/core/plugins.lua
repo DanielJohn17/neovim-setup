@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -24,7 +24,7 @@ local plugins = {
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
-    dependancies = {{ 'nvim-lua/plenary.nvim' }}
+    dependancies = { { 'nvim-lua/plenary.nvim' } }
   },
   'nvim-telescope/telescope-ui-select.nvim',
 
@@ -34,6 +34,7 @@ local plugins = {
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
   },
+  "nvimtools/none-ls.nvim",
 
   -- completion
   'hrsh7th/nvim-cmp',
@@ -55,7 +56,7 @@ local plugins = {
 
   --oil nvim
   {
-  'stevearc/oil.nvim',
+    'stevearc/oil.nvim',
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {},
