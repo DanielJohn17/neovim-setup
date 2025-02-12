@@ -48,6 +48,9 @@ local plugins = {
   -- use "catppuccino/nvim"
   "bluz71/vim-nightfly-colors",
   "folke/tokyonight.nvim",
+
+  -- copilot
+  'github/copilot.vim',
 }
 
 local opts = {}
