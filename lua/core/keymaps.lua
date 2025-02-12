@@ -16,4 +16,41 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+local keymap = vim.api.nvim_set_keymap
+
+local opts = { noremap = true, silent = true }
+
+keymap('n', '<leader>h', ':nohlsearch<CR>', opts)
+
+-- Resize
+keymap("n", "<C-k>", ":resize +2<CR>", opts)
+keymap("n", "<C-j>", ":resize -2<CR>", opts)
+keymap("n", "<C-h>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-l>", ":vertical resize +2<CR>", opts)
+
+-- Visual
+-- Move text up and down
+keymap("v", "<A-DOWN>", ":m .+1<CR>==", opts)
+keymap("v", "<A-UP>", ":m .-2<CR>==", opts)
+keymap("v", "p", '"_dp', opts)
+
+-- Visual Block --
+-- Move text up and down
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Copy, Cut, Paste and Undo keybinds --
+keymap("v", "<C-c>", '"+y', opts)
+
+keymap('n', "<C-v>", '"+p', opts)
+keymap('v', "<C-v>", '"+p', opts)
+
+keymap('v', "<C-x>", '"+d', opts)
+
+-- bufferline
+keymap('n', '<TAB>', ':next<CR>', opts)
+keymap('n', '<S-TAB>', ':bprevious<CR>', opts)
+
+-- close bufferline
