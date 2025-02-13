@@ -74,6 +74,15 @@ local plugins = {
 	-- bufferline
 	"akinsho/bufferline.nvim",
 	"moll/vim-bbye",
+
+	-- autopairs
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+		-- use opts = {} for passing setup options
+		-- this is equivalent to setup({}) function
+	},
 }
 
 local opts = {}
