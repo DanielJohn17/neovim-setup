@@ -59,3 +59,7 @@ keymap('n', '<leader>x', ':Bdelete!<CR>', opts)
 -- vscode like keymaps
 vim.keymap.set("i", "<C-H>", "<C-w>", opts)
 vim.keymap.set("i", "<C-Del>", "<C-o>dw", opts)
+
+-- commnents
+keymap("n", "<C-_>", '<Plug>(comment_toggle_linewise_current)', opts)
+keymap('x', '<C-_>', '<Plug>(comment_toggle_linewise_visual)', opts)

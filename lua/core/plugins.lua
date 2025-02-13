@@ -83,6 +83,10 @@ local plugins = {
 		-- use opts = {} for passing setup options
 		-- this is equivalent to setup({}) function
 	},
+
+	-- comment string
+	"numToStr/Comment.nvim",
+	"JoosepAlviste/nvim-ts-context-commentstring",
 }
 
 local opts = {}
