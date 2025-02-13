@@ -50,7 +50,12 @@ keymap('v', "<C-v>", '"+p', opts)
 keymap('v', "<C-x>", '"+d', opts)
 
 -- bufferline
-keymap('n', '<TAB>', ':next<CR>', opts)
+keymap('n', '<TAB>', ':bnext<CR>', opts)
 keymap('n', '<S-TAB>', ':bprevious<CR>', opts)
 
 -- close bufferline
+keymap('n', '<leader>x', ':Bdelete!<CR>', opts)
+
+-- vscode like keymaps
+vim.keymap.set("i", "<C-H>", "<C-w>", opts)
+vim.keymap.set("i", "<C-Del>", "<C-o>dw", opts)
