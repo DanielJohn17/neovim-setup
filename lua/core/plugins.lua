@@ -107,6 +107,9 @@ local plugins = {
 	-- comment string
 	"numToStr/Comment.nvim",
 	"JoosepAlviste/nvim-ts-context-commentstring",
+
+	-- Which key
+	"folke/which-key.nvim",
 }
 
 local opts = {}
