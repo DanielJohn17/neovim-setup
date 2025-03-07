@@ -70,3 +70,8 @@ lspconfig.gopls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+lspconfig.templ.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
