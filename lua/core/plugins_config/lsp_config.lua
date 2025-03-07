@@ -75,3 +75,8 @@ lspconfig.templ.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+lspconfig.html.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
