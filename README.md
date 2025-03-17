@@ -1,6 +1,6 @@
 # Neovim Setup
 
-This is my neovim setup. I use neovim as my primary text editor for coding and writing. I have been using neovim for a few years now and I have been constantly tweaking my setup to make it more efficient and productive. I have tried to keep my setup as minimal as possible and only include the plugins that I find useful. I have also tried to keep my setup as simple as possible so that it is easy to understand and modify.
+This is my neovim setup.
 
 ## Features
 
