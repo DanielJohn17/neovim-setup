@@ -85,3 +85,13 @@ lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+lspconfig.intelephense.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+lspconfig.hyprls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})

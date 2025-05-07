@@ -61,5 +61,5 @@ vim.keymap.set("i", "<C-H>", "<C-w>", opts)
 vim.keymap.set("i", "<C-Del>", "<C-o>dw", opts)
 
 -- commnents
-keymap("n", "<C-_>", '<Plug>(comment_toggle_linewise_current)', opts)
-keymap('x', '<C-_>', '<Plug>(comment_toggle_linewise_visual)', opts)
+keymap("n", "<leader>/", '<Plug>(comment_toggle_linewise_current)', opts)
+keymap('x', '<leader>/', '<Plug>(comment_toggle_linewise_visual)', opts)
