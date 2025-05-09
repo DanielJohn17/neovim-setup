@@ -30,6 +30,12 @@ Before you install my neovim setup, you need to make sure that you have the foll
 sudo apt-get install python3-venv
 ```
 
+`ripgrep` is also required to install the fuzzy file finder. You can install it using the following command:
+
+```bash
+sudo apt-get install ripgrep
+```
+
 ## Installation
 
 To install my neovim setup, you need to follow these steps:
