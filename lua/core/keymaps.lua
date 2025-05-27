@@ -1,14 +1,14 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.opt.number = true
-vim.opt.backspace = '2'
+vim.opt.backspace = "2"
 vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.autowrite = true
 vim.opt.cursorline = true
 vim.opt.autoread = true
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 -- use spaces for tabs and whatnot
 vim.opt.tabstop = 2
@@ -20,7 +20,7 @@ local keymap = vim.api.nvim_set_keymap
 
 local opts = { noremap = true, silent = true }
 
-keymap('n', '<leader>h', ':nohlsearch<CR>', opts)
+keymap("n", "<leader>h", ":nohlsearch<CR>", opts)
 
 -- Resize
 keymap("n", "<C-k>", ":resize +2<CR>", opts)
@@ -44,17 +44,22 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Copy, Cut, Paste and Undo keybinds --
 keymap("v", "<C-c>", '"+y', opts)
 
-keymap('n', "<C-v>", '"+p', opts)
-keymap('v', "<C-v>", '"+p', opts)
+keymap("n", "<C-v>", '"+p', opts)
+keymap("v", "<C-v>", '"+p', opts)
 
-keymap('v', "<C-x>", '"+d', opts)
+keymap("v", "<C-x>", '"+d', opts)
+
+keymap("n", "<M-d>", "yyp", opts) -- yank the current line
+keymap("v", "<M-d>", "yyp", opts) -- yank the selected lines
+
+keymap("n", "<C-a>", "gg<S-v>G", opts) -- select all
 
 -- bufferline
-keymap('n', '<TAB>', ':bnext<CR>', opts)
-keymap('n', '<S-TAB>', ':bprevious<CR>', opts)
+keymap("n", "<TAB>", ":bnext<CR>", opts)
+keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 
 -- close bufferline
-keymap('n', '<leader>x', ':Bdelete!<CR>', opts)
+keymap("n", "<leader>x", ":Bdelete!<CR>", opts)
 
 -- vscode like keymaps
 vim.keymap.set("i", "<C-H>", "<C-w>", opts)
@@ -66,5 +71,5 @@ vim.keymap.set("v", "<TAB>", ">gv", opts)
 vim.keymap.set("v", "<S-TAB>", "<gv", opts)
 
 -- commnents
-keymap("n", "<leader>/", '<Plug>(comment_toggle_linewise_current)', opts)
-keymap('x', '<leader>/', '<Plug>(comment_toggle_linewise_visual)', opts)
+keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
+keymap("x", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", opts)
