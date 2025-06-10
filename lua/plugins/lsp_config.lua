@@ -34,6 +34,16 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+			vim.diagnostic.config({
+				virtual_text = true, -- Show inline errors
+				update_in_insert = true, -- Update diagnostics while typing in insert mode
+				float = {
+					focusable = false,
+					style = "minimal",
+					border = "rounded",
+					source = "always",
+				},
+			})
 			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
