@@ -5,12 +5,18 @@ keymap("n", "<leader>h", ":nohlsearch<CR>", opts)
 
 keymap("i", "jj", "<Esc>", opts)
 
+-- Visual
+-- Move text up and down
+keymap("v", "<A-DOWN>", ":m .+1<CR>==", opts)
+keymap("v", "<A-UP>", ":m .-2<CR>==", opts)
+keymap("v", "p", '"_dp', opts)
+
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+4<CR>gv-gv", opts)
-keymap("x", "K", ":move '<1<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+4<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<1<CR>gv-gv", opts)
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Copy, Cut, Paste and Undo keybinds --
 keymap("v", "<C-c>", '"+y', opts)
@@ -30,7 +36,7 @@ keymap("n", "<TAB>", ":bnext<CR>", opts)
 keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 
 -- close bufferline
-keymap("n", "<leader>x", ":Bdelete!<CR>", opts)
+keymap("n", "<leader>x", ":bdelete!<CR>", opts)
 
 -- vscode like keymaps
 vim.keymap.set("i", "<C-H>", "<C-w>", opts)
