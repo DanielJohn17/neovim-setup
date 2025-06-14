@@ -5,6 +5,8 @@ keymap("n", "<leader>h", ":nohlsearch<CR>", opts)
 
 keymap("i", "jj", "<Esc>", opts)
 
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- delete without yanking
+
 -- Visual
 -- Move text up and down
 keymap("v", "<A-DOWN>", ":m .+1<CR>==", opts)
@@ -50,3 +52,6 @@ vim.keymap.set("v", "<S-TAB>", "<gv", opts)
 -- commnents
 keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
 keymap("x", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", opts)
+
+-- replace word under cursorline
+keymap("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/><C-r><C-w>/gI<Left><Left><Left>]], opts)
