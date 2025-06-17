@@ -57,6 +57,10 @@ return {
 				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 				vim.keymap.set("n", "<S-k>", vim.lsp.buf.hover, opts)
 				vim.keymap.set("n", "<leader>ge", vim.diagnostic.open_float, opts)
+				vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
+				vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
+
+				vim.keymap.set("n", "<leader>e", vim.diagnostic.setloclist, opts)
 			end
 
 			lspconfig.lua_ls.setup({
