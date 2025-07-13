@@ -4,11 +4,18 @@ return {
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		extensions = {
-			["ui-select"] = {
-				require("telescope.themes").get_dropdown({}),
-			},
-		},
+		extensions = (function()
+			local ok, telescope = pcall(require, "telescope")
+			if not ok then
+				vim.notify("Telescope is not installed!", vim.log.levels.ERROR)
+				return {}
+			end
+			return {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown({}),
+				},
+			}
+		end)(),
 		config = function()
 			local builtin = require("telescope.builtin")
 			require("telescope").load_extension("ui-select")

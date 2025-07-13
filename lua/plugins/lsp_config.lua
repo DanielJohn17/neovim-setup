@@ -134,26 +134,26 @@ return {
 				capabilities = capabilities,
 			})
 
-      lspconfig.sqls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        settings = {
-          sqls = {
-            connections = {
-              --[[ { ]]
-              --[[   driver = "mysql", ]]
-              --[[   dataSourceName = "user:password@tcp(localhost:3307)/mydatabase", ]]
-              --[[   name = "MySQL Connection", ]]
-              --[[ }, ]]
-              --[[ { ]]
-              --[[   driver = "postgres", ]]
-              --[[   dataSourceName = "postgres://user:password@localhost:5433/mydatabase?sslmode=disable", ]]
-              --[[   name = "PostgreSQL Connection", ]]
-              --[[ }, ]]
-            },
-          },
-        },
-      })
+			lspconfig.sqls.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				settings = {
+				sqls = {
+					connections = {
+					--[[ { ]]
+					--[[   driver = "mysql", ]]
+					--[[   dataSourceName = "user:password@tcp(localhost:3307)/mydatabase", ]]
+					--[[   name = "MySQL Connection", ]]
+					--[[ }, ]]
+					--[[ { ]]
+					--[[   driver = "postgres", ]]
+					--[[   dataSourceName = "postgres://user:password@localhost:5433/mydatabase?sslmode=disable", ]]
+					--[[   name = "PostgreSQL Connection", ]]
+					--[[ }, ]]
+					},
+				},
+				},
+			})
 		end,
 	},
 }
