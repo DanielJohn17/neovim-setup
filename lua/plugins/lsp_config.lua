@@ -30,6 +30,7 @@ return {
 				"docker_compose_language_service",
 				"sqls",
 				"bashls",
+				"clangd",
 			},
 		},
 	},
@@ -156,7 +157,12 @@ return {
 				},
 			})
 
-      lspconfig.bashls.setup({})
+			lspconfig.bashls.setup({})
+
+			lspconfig.clangd.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
 		end,
 	},
 }
