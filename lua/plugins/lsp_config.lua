@@ -160,6 +160,14 @@ return {
 			lspconfig.bashls.setup({})
 
 			lspconfig.clangd.setup({
+				cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose" },
+				init_options = {
+					fallbackFlags = { "-std=c++17" },
+				},
+				filetypes = { "c", "cpp", "cxx", "cc" },
+				root_dir = function()
+					vim.fn.getcwd()
+				end,
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
