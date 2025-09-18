@@ -47,7 +47,6 @@ return {
 					source = "always",
 				},
 			})
-			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local on_attach = function(_, _)
@@ -66,77 +65,77 @@ return {
 				vim.keymap.set("n", "<leader>e", vim.diagnostic.setloclist, opts)
 			end
 
-			lspconfig.lua_ls.setup({
+			vim.lsp.config["lua_ls"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.ts_ls.setup({
+			vim.lsp.config["ts_ls"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.eslint.setup({
+			vim.lsp.config["eslint"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.vimls.setup({
+			vim.lsp.config["vimls"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.pylsp.setup({
+			vim.lsp.config["pslsp"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.cssls.setup({
+			vim.lsp.config["cssls"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.gopls.setup({
+			vim.lsp.config["gopls"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.templ.setup({
+			vim.lsp.config["templ"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.html.setup({
+			vim.lsp.config["html"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.tailwindcss.setup({
+			vim.lsp.config["tailwindcss"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.intelephense.setup({
+			vim.lsp.config["intelephense"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.hyprls.setup({
+			vim.lsp.config["hyprls"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.dockerls.setup({
+			vim.lsp.config["dockerls"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.docker_compose_language_service.setup({
+			vim.lsp.config["docker_compose_language_service"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 
-			lspconfig.sqls.setup({
+			vim.lsp.config["sqls"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
@@ -155,11 +154,11 @@ return {
 						},
 					},
 				},
-			})
+			}
 
-			lspconfig.bashls.setup({})
+			vim.lsp.config["bashls"] = {}
 
-			lspconfig.clangd.setup({
+			vim.lsp.config["clangd"] = {
 				cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose" },
 				init_options = {
 					fallbackFlags = { "-std=c++17" },
@@ -170,7 +169,7 @@ return {
 				end,
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
+			}
 		end,
 	},
 }
