@@ -85,7 +85,7 @@ return {
 				capabilities = capabilities,
 			}
 
-			vim.lsp.config["pslsp"] = {
+			vim.lsp.config["pylsp"] = {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			}
