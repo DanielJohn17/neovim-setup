@@ -6,6 +6,15 @@ return {
 		vim.opt.termguicolors = true
 		require("bufferline").setup({
 			options = {
+				offsets = {
+					{
+						filetype = "neo-tree",
+						text = "File Explorer",
+						highlight = "Directory",
+						text_align = "center",
+						separator = true,
+					},
+				},
 				diagnostics = "nvim_lsp",
 				diagnostics_update_in_insert = false,
 				separator_style = "slant",
