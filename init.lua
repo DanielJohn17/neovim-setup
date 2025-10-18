@@ -86,6 +86,10 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 
+-- Automatically reload files changed outside of Neovim (e.g. after git checkout)
+vim.opt.autoread = true
+
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -104,3 +108,23 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 require("keymap")
+
+
+-- Reload files and refresh bufferline when switching branches or returning focus
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  pattern = "*",
+  command = "checktime",
+})
+
+-- Notify user when file reloaded and refresh bufferline safely
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  callback = function()
+    vim.notify("File reloaded from disk", vim.log.levels.INFO)
+    -- Safely refresh bufferline
+    local ok, bufferline = pcall(require, "bufferline.state")
+    if ok and bufferline then
+      require("bufferline.ui").refresh()
+    end
+  end,
+})
