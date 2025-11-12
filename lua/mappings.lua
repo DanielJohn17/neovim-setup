@@ -13,7 +13,7 @@ map("n", "<leader>h", ":nohlsearch<CR>", opts)
 
 map("i", "jj", "<Esc>", opts)
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- delete without yanking
+map({ "n", "v" }, "<leader>d", [["_d]]) -- delete without yanking
 
 -- Visual
 -- Move text up and down

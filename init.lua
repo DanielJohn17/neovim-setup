@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 
 -- Ensures termguicolors is enabled if not already
 vim.opt.termguicolors = true
+vim.opt.autoread = true
 
 
 -- bootstrap lazy and all plugins
