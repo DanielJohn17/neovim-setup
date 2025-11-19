@@ -5,6 +5,25 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true
 vim.opt.autoread = true
 
+-- Trigger checktime whenever coming back to Neovim
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  callback = function()
+    vim.cmd "checktime"
+  end,
+})
+
+-- Notify and refresh bufferline when file changed externally
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  callback = function()
+    vim.notify(" File updated from disk", vim.log.levels.INFO)
+
+    -- NVChad & bufferline refresh (safe)
+    local ok, ui = pcall(require, "bufferline.ui")
+    if ok and ui then
+      ui.refresh()
+    end
+  end,
+})
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
