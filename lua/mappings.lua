@@ -49,13 +49,13 @@ map("n", "<S-TAB>", ":bprevious<CR>", opts)
 map("n", "<leader>x", ":bdelete!<CR>", opts)
 
 -- vscode like keymaps
-vim.keymap.set("i", "<C-H>", "<C-w>", opts)
-vim.keymap.set("i", "<C-Del>", "<C-o>dw", opts)
-vim.keymap.set("i", "<C-Backspace>", "<C-o>db", opts)
+map("i", "<C-H>", "<C-w>", opts)
+map("i", "<C-Del>", "<C-o>dw", opts)
+map("i", "<C-Backspace>", "<C-o>db", opts)
 
 -- indent multiple lines
-vim.keymap.set("v", "<TAB>", ">gv", opts)
-vim.keymap.set("v", "<S-TAB>", "<gv", opts)
+map("v", "<TAB>", ">gv", opts)
+map("v", "<S-TAB>", "<gv", opts)
 
 -- commnents
 map("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
