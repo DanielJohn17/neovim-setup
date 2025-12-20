@@ -63,3 +63,5 @@ map("x", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", opts)
 
 -- replace word under cursorline
 map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/><C-r><C-w>/gI<Left><Left><Left>]], opts)
+
+map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
