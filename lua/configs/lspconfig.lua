@@ -14,6 +14,8 @@ local servers = {
   "bashls",
   "templ",
   "eslint",
+  "postgres_lsp",
+  "lua_ls",
 }
 vim.lsp.enable(servers)
 
