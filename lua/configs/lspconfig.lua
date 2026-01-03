@@ -1,5 +1,16 @@
 require("nvchad.configs.lspconfig").defaults()
 
+vim.lsp.config.tailwindcss = {
+  filetypes = {
+    "html",
+    "css",
+    "scss",
+    "javascriptreact",
+    "typescriptreact",
+    "templ",
+  },
+}
+
 local servers = {
   "html",
   "cssls",
