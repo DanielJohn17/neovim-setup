@@ -1,5 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
+-- Tailwind: STRICT filetypes only
 vim.lsp.config.tailwindcss = {
   filetypes = {
     "html",
@@ -9,6 +10,18 @@ vim.lsp.config.tailwindcss = {
     "typescriptreact",
     "templ",
   },
+
+  -- Prevent tailwind from attaching to plain TS/JS
+  root_dir = function(...)
+    return require("lspconfig.util").root_pattern("tailwind.config.js", "tailwind.config.ts", "postcss.config.js")(...)
+  end,
+}
+
+-- ESLint: diagnostics & fixes only
+vim.lsp.config.eslint = {
+  on_attach = function(client)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
 }
 
 local servers = {
@@ -27,6 +40,5 @@ local servers = {
   "postgres_lsp",
   "lua_ls",
 }
-vim.lsp.enable(servers)
 
--- read :h vim.lsp.config for changing options of lsp servers
+vim.lsp.enable(servers)
