@@ -11,43 +11,9 @@ vim.lsp.config.tailwindcss = {
   },
 }
 
-vim.lsp.config.ts_ls = {
-  settings = {
-    typescript = {
-      suggest = {
-        autoImports = true,
-      },
-      preferences = {
-        -- REQUIRED
-        includePackageJsonAutoImports = "on",
-
-        -- Prefer package imports over relative ones
-        importModuleSpecifier = "non-relative",
-
-        -- Try to preserve subpath imports
-        importModuleSpecifierPreference = "non-relative",
-
-        -- IMPORTANT for hono-style exports
-        quotePreference = "double",
-      },
-    },
-    javascript = {
-      suggest = {
-        autoImports = true,
-      },
-      preferences = {
-        includePackageJsonAutoImports = "on",
-        importModuleSpecifier = "non-relative",
-        importModuleSpecifierPreference = "non-relative",
-      },
-    },
-  },
-}
-
 local servers = {
   "html",
   "cssls",
-  "ts_ls",
   "djlsp",
   "pylsp",
   "gopls",
