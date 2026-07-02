@@ -11,6 +11,15 @@ return {
     config = function()
       require "configs.lspconfig"
     end,
+    opts = {
+      capabilities = {
+        workspace = {
+          didChangeWatchedFiles = {
+            dynamicRegistration = true,
+          },
+        },
+      },
+    },
   },
 
   -- test new blink
