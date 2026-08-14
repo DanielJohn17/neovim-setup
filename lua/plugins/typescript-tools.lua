@@ -1,5 +1,8 @@
 return {
   "pmizio/typescript-tools.nvim",
+  enabled = function()
+    return not ((require("configs.tsdetect").local_ts_major() or 0) >= 7)
+  end,
   ft = {
     "typescript",
     "typescriptreact",

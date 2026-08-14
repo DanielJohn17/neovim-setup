@@ -24,6 +24,20 @@ vim.lsp.config.eslint = {
   end,
 }
 
+-- TypeScript 7 native (Go) LSP: prefer the local project's tsc, fall back to global
+vim.lsp.config("tsgo", {
+  cmd = function(dispatchers, config)
+    local cmd = "tsc"
+    if (config or {}).root_dir then
+      local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", "tsc")
+      if vim.fn.executable(local_cmd) == 1 then
+        cmd = local_cmd
+      end
+    end
+    return vim.lsp.rpc.start({ cmd, "--lsp", "--stdio" }, dispatchers)
+  end,
+})
+
 local servers = {
   "html",
   "cssls",
@@ -40,5 +54,9 @@ local servers = {
   "postgres_lsp",
   "lua_ls",
 }
+
+if (require("configs.tsdetect").local_ts_major() or 0) >= 7 then
+  table.insert(servers, "tsgo")
+end
 
 vim.lsp.enable(servers)
