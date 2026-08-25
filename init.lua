@@ -53,6 +53,7 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
+require("config.remote_clipboard").setup()
 require "options"
 require "autocmds"
 

@@ -22,7 +22,50 @@ return {
     },
   },
 
-  -- test new blink
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      filters = {
+        dotfiles = false,
+      },
+    },
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        vimgrep_arguments = {
+          "rg",
+          "-L",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden",
+          "--glob=!.git",
+        },
+      },
+      pickers = {
+        find_files = {
+          find_command = {
+            "fd",
+            "--type",
+            "f",
+            "--hidden",
+            "--no-ignore",
+            "--exclude",
+            ".git",
+            "--exclude",
+            "node_modules",
+          },
+        },
+      },
+    },
+  },
+
   -- { import = "nvchad.blink.lazyspec" },
 
   -- {
