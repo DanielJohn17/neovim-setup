@@ -51,15 +51,9 @@ return {
       pickers = {
         find_files = {
           find_command = {
-            "fd",
-            "--type",
-            "f",
-            "--hidden",
-            "--no-ignore",
-            "--exclude",
-            ".git",
-            "--exclude",
-            "node_modules",
+            "bash",
+            "-c",
+            "(fd --hidden --type f --exclude .git --exclude node_modules; fd --hidden --no-ignore --type f --exclude .git --exclude node_modules '.env') | sort -u",
           },
         },
       },
