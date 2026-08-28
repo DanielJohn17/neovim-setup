@@ -19,6 +19,9 @@ local servers = {
     filetypes = { "gsx" },
     root_markers = { "go.mod", "gsx.toml", ".git" },
     single_file_support = true,
+    on_attach = function(client)
+      client.server_capabilities.semanticTokensProvider = nil
+    end,
   },
 }
 

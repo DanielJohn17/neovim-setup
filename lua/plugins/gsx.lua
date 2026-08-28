@@ -100,6 +100,10 @@ return {
         root_dir = lspconfig.util.root_pattern("go.mod", "gsx.toml", ".git"),
         root_markers = { "go.mod", "gsx.toml", ".git" },
         single_file_support = true,
+        on_attach = function(client)
+          -- tree-sitter handles gsx highlighting; disable semantic tokens to prevent decoration crashes on syntax errors
+          client.server_capabilities.semanticTokensProvider = nil
+        end,
       }, opts.servers.tui or {})
 
       opts.setup = opts.setup or {}
