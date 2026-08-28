@@ -24,6 +24,11 @@ vim.lsp.config.eslint = {
   end,
 }
 
+-- htmx LSP: attach to templ files
+vim.lsp.config.htmx = {
+  filetypes = { "html", "templ" },
+}
+
 -- TypeScript 7 native (Go) LSP: prefer the local project's tsc, fall back to global
 vim.lsp.config("tsgo", {
   cmd = function(dispatchers, config)
@@ -53,6 +58,7 @@ local servers = {
   "eslint",
   "postgres_lsp",
   "lua_ls",
+  "htmx",
 }
 
 if (require("configs.tsdetect").local_ts_major() or 0) >= 7 then
