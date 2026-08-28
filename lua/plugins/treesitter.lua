@@ -1,43 +1,12 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	branch = "master",
-	build = ":TSUpdate",
-	lazy = false,
-	opts = {
-		ensure_installed = {
-			"c",
-			"cpp",
-			"lua",
-			"vim",
-			"vimdoc",
-			"query",
-			"markdown",
-			"markdown_inline",
-			"python",
-			"javascript",
-			"typescript",
-			"go",
-			"php",
-			"html",
-			"css",
-			"csv",
-			"sql",
-			"bash",
-			"json",
-			"yaml",
-			"toml",
-			"regex",
-			"rust",
-			"java",
-			"dockerfile",
-		},
-		sync_install = false,
-		auto_install = true,
-		highlight = {
-			enable = true,
-		},
-	},
-	config = function(_, opts)
-		require("nvim-treesitter.configs").setup(opts)
-	end,
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, { "vim", "lua", "vimdoc", "html", "css" })
+      else
+        opts.ensure_installed = { "vim", "lua", "vimdoc", "html", "css" }
+      end
+    end,
+  },
 }
